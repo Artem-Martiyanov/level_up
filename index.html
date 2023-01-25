@@ -10,7 +10,7 @@
 
     <title>Level Up</title>
 </head>
-<body>
+<body onload="time()">
 <main>
     <!--  Header  -->
     <header class="page__header">
@@ -231,7 +231,10 @@
         <div class="container">
             <h2 class="visually-hidden">Заказать у нас</h2>
             <p class="section__header">Продукт для повышения потенции "Level Up"</p>
-            <div class="timer">123</div>
+            <section class="timer">
+              <p class="timer__title">До окончания специального предложения осталось:</p>
+              <span id="timer"></span>
+            </section>
             <section class="feedback" id="feedback">
                 <h3 class="visually-hidden">Форма обратной связи</h3>
                 <div class="product">
@@ -284,5 +287,22 @@
 
 
 <script src="slider/itc-slider.min.js" defer></script>
+    <script>
+      let timeEnd = localStorage.getItem("sec") || 60 * 30;
+
+      function time() {
+        const toTwoDigit = (num) =>
+          String(num).length === 2 ? num : "0" + num;
+        if (!timeEnd) timeEnd = 60 * 30;
+        let tmin = Math.floor(timeEnd / 60);
+        let tsec = timeEnd % 60;
+
+        let timestr = `${toTwoDigit(tmin)}:${toTwoDigit(tsec)}`;
+        timeEnd--;
+        localStorage.setItem("sec", timeEnd);
+        document.getElementById("timer").innerHTML = timestr;
+        window.setTimeout("time()", 1000);
+      }
+    </script>
 </body>
 </html>
