@@ -113,7 +113,7 @@ p {
 .product__options-item + .product__options-item {
     margin-top: 1em;
 }
-.promo__button {
+.product__button {
     padding: 30px 0;
     display: flex;
     justify-content: center;
