@@ -269,6 +269,7 @@
                           type="tel"
                           name="user-tel"
                           placeholder="Введите номер телефона*"
+                          onkeyup="this.value = this.value.replace(/[^\d+)(-]/g,'');"
                           required
                         />
                         <span class="input__helper">Пример: +7(xxx)-xxx-xx-xx</span>
