@@ -232,7 +232,8 @@
             <h2 class="visually-hidden">Заказать у нас</h2>
             <p class="section__header">Продукт для повышения потенции "Level Up"</p>
             <div class="timer">123</div>
-            <div class="feedback" id="feedback">
+            <section class="feedback" id="feedback">
+                <h3 class="visually-hidden">Форма обратной связи</h3>
                 <div class="product">
                     <div class="product__img-wrapper">
                         <img class="product__img"
@@ -247,32 +248,34 @@
                         <span class="product__price-old">2000р</span>
                     </div>
                 </div>
-
-                <form class="feedback__form" action="#" method="post">
-                    <label class="visually-hidden label" for="name">Поле ввода имени</label>
-                        <input class="feedback__input"
-                               id="name"
-                               type="text"
-                               name="user-name"
-                               placeholder="Введите имя*"
-                               required
-                        >
-                    <p class="input__helper">Пример: Иванов Иван Иванович</p>
-
-
-                    <label class="visually-hidden" for="tel">Поле ввода номера телефона</label>
-                    <input class="feedback__input"
-                           id="tel"
-                           type="tel"
-                           name="user-tel"
-                           placeholder="Введите номер телефона*"
-                           required
-                    >
-                    <button class="btn" type="submit">Заказать</button>
+                    <form class="feedback__form" action="#" method="post">
+                      <label class="visually-hidden label" for="name">Поле ввода имени</label>
+                      <p class="input__wrapper">
+                        <input
+                          class="feedback__input"
+                          id="name"
+                          type="text"
+                          name="user-name"
+                          placeholder="Введите имя*"
+                          required
+                        />
+                        <span class="input__helper">Пример: Иванов Иван Иванович</span>
+                      </p>
+                      <label class="visually-hidden" for="tel">Поле ввода номера телефона</label>
+                      <p class="input__wrapper">
+                        <input
+                          class="feedback__input"
+                          id="tel"
+                          type="tel"
+                          name="user-tel"
+                          placeholder="Введите номер телефона*"
+                          required
+                        />
+                        <span class="input__helper">Пример: +7(xxx)-xxx-xx-xx</span>
+                      </p>
+                      <button class="btn" type="submit">Заказать</button>
                 </form>
-            </div>
-
-
+            </section>
         </div>
     </section>
 </main>
