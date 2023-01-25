@@ -89,7 +89,7 @@
                         <a href="#feedback" class="btn">Заказать</a>
                     </div>
                 </div>
-                <ul class="composition__list">
+                <ul class="components__list">
                     <li class="components__item">
                         <div class="component__img-box">
                             <img class="component__img" src="img/component.png" alt="Компонент препарата.">
@@ -130,10 +130,10 @@
                     <ol class="itc-slider__items">
                         <li class="itc-slider__item">
                             <div class="review">
-                                <h3 class="review__title">Lorem Ipsum</h3>
                                 <div class="review__avatar">
                                     <img class="review__avatar-img" src="img/review/review_1.jpg" alt="Покупатель." width="520" height="584">
                                 </div>
+                                <h3 class="review__title">Lorem Ipsum</h3>
                                 <p class="review__text">Lorem ipsum dolor sit amet,
                                     consectetur adipisicing elit. Nisi soluta ut
                                     voluptas Lorem ipsum dolor sit amet, consectetur
@@ -149,10 +149,10 @@
                         </li>
                         <li class="itc-slider__item">
                             <div class="review">
-                                <h3 class="review__title">Nisi Soluta</h3>
                                 <div class="review__avatar">
                                     <img class="review__avatar-img" src="img/review/review_2.jpg" alt="Покупатель." width="750" height="500">
                                 </div>
+                                <h3 class="review__title">Nisi Soluta</h3>
                                 <p class="review__text">Lorem ipsum dolor sit amet,
                                     consectetur adipisicing elit. Nisi soluta ut voluptas
                                     Lorem ipsum dolor sit amet, consectetur.</p>
@@ -164,10 +164,10 @@
                         </li>
                         <li class="itc-slider__item">
                             <div class="review">
-                                <h3 class="review__title">Consectetur Adipisicing</h3>
                                 <div class="review__avatar">
                                     <img class="review__avatar-img" src="img/review/review_3.jpg" alt="Покупатель." width="836" height="513">
                                 </div>
+                                <h3 class="review__title">Consectetur Adipisicing</h3>
                                 <p class="review__text">Lorem ipsum dolor sit amet,
                                     consectetur adipisicing elit. Nisi soluta ut
                                     voluptas Lorem ipsum dolor sit amet, consectetur
@@ -277,30 +277,24 @@
                         />
                         <span class="input__helper">Пример: +7(xxx)-xxx-xx-xx</span>
                       </p>
-                      <button class="btn" type="submit">Заказать</button>
+                      <button class="btn btn--form" type="submit">Заказать</button>
                 </form>
             </section>
         </div>
     </section>
 </main>
-
-
-
 <script src="slider/itc-slider.min.js" defer></script>
     <script>
       let timeEnd = localStorage.getItem("sec") || 60 * 30;
-
       function time() {
-        const toTwoDigit = (num) =>
-          String(num).length === 2 ? num : "0" + num;
+        const toTwoDigit = (num) => String(num).length === 2 ? num : "0" + num;
         if (!timeEnd) timeEnd = 60 * 30;
-        let tmin = Math.floor(timeEnd / 60);
-        let tsec = timeEnd % 60;
-
-        let timestr = `${toTwoDigit(tmin)}:${toTwoDigit(tsec)}`;
+        let tMin = Math.floor(timeEnd / 60);
+        let tSec = timeEnd % 60;
+        let timeStr = `${toTwoDigit(tMin)}:${toTwoDigit(tSec)}`;
         timeEnd--;
         localStorage.setItem("sec", timeEnd);
-        document.getElementById("timer").innerHTML = timestr;
+        document.getElementById("timer").innerHTML = timeStr;
         window.setTimeout("time()", 1000);
       }
     </script>
